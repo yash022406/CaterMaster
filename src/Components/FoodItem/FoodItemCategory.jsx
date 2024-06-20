@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import AddCategoryOverlay from './Overlays/AddCategoryOverlay';
 const FoodItemCategory = () => {
     const category = [
         {
@@ -29,11 +30,18 @@ const FoodItemCategory = () => {
             category_desc: "All type of starters",
         },
     ]
+    const [addCategory, setAddCategory] = useState()
+    const openAddCategory = () => {
+        setAddCategory(true);
+      }
+      const closeAddCategory = ( ) => {
+        setAddCategory(false);
+      }
   return (
     <div className='px-6 pt-6 w-full'>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
             <p className="text-xl">Food Items Category</p>
-            <button className='p-2 border-2 border-[#484848] text-white bg-[#484848] rounded-md hover:bg-white hover:border-2 hover:border-[#484848] hover:text-black'>Add Category</button>
+            <button onClick={() => {openAddCategory()}} className='p-2 border-2 border-[#484848] text-white bg-[#484848] rounded-md hover:bg-white hover:border-2 hover:border-[#484848] hover:text-black'>Add Category</button>
         </div>
         <div className="w-full pt-8">
         <table className='w-full table-auto border-collapse'>
@@ -58,6 +66,9 @@ const FoodItemCategory = () => {
       </tbody>
     </table>
         </div>
+        {   addCategory &&
+            <AddCategoryOverlay closeAddCategory={closeAddCategory} />
+        }
     </div>
   )
 }

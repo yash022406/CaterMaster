@@ -9,6 +9,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import FoodItemCategory from "./Components/FoodItem/FoodItemCategory";
+import FoodItem from "./Components/FoodItem/FoodItem";
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
       <Route element={<Layout />}>
         <Route index element={<Dashboard />} />
         <Route path="/food-item-category" element={<FoodItemCategory />} />
+        <Route path="/food-items" element={<FoodItem />} />
       </Route>
       {/* <Navbar />
       <Dashboard /> */}

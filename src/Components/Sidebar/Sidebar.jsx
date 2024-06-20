@@ -48,7 +48,7 @@ const Sidebar = () => {
             <FaCircle color='green' size={18} />
             <p className='text-lg'>Food Category</p>
         </Link>
-        <Link className="flex items-center gap-4">
+        <Link to='/food-items' className="flex items-center gap-4">
             <FaCircle size={16} color='green' />
             <p className='text-lg'>Food Items</p>
         </Link>
